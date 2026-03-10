@@ -30,7 +30,7 @@ public class Main{
         y=generareNumere(7,10);
 
         Sort(x);//da
-        Sort(y);
+        Sort(y);//da
         System.out.println(x);
         System.out.println(y);
         xPlusY.addAll(x);
