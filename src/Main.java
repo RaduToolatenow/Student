@@ -29,7 +29,7 @@ public class Main{
 
         y=generareNumere(7,10);
 
-        Sort(x);
+        Sort(x);//da
         Sort(y);
         System.out.println(x);
         System.out.println(y);
