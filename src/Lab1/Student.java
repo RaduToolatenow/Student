@@ -11,9 +11,21 @@ public class Student {
         this.Nume = nume;
         this.FormatieDeStudiu = formatieDeStudiu;
     }
+    public String getPrenume() {
+        return Prenume;
+    }
+
+    public String getNume() {
+        return Nume;
+    }
+
+    public String getFormatieDeStudiu() {
+        return FormatieDeStudiu;
+    }
     @Override
     public String toString() {
         return  "Numar_Matricol:" + NumarMatricol + " prenume:" + Prenume + " nume:" + Nume +  " formatieDeStudiu:" + FormatieDeStudiu;
     }
+
 
 }
