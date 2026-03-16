@@ -22,6 +22,26 @@ public class Student {
     public String getFormatieDeStudiu() {
         return FormatieDeStudiu;
     }
+
+    @Override
+    public boolean equals(Object o) {
+
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Student s = (Student) o;
+
+        return Prenume.equals(s.Prenume) &&
+                Nume.equals(s.Nume) &&
+                FormatieDeStudiu.equals(s.FormatieDeStudiu);
+    }
+
+    @Override
+    public int hashCode() {
+        return Prenume.hashCode() + Nume.hashCode() + FormatieDeStudiu.hashCode();
+    }
+
     @Override
     public String toString() {
         return  "Numar_Matricol:" + NumarMatricol + " prenume:" + Prenume + " nume:" + Nume +  " formatieDeStudiu:" + FormatieDeStudiu;
