@@ -1,3 +1,4 @@
+import Lab1.Litere;
 import Lab1.Student;
 import Lab2.Ap1;
 
@@ -11,12 +12,26 @@ import static Lab2.Ap1.Sort;
 public class Main{
     public static void main(String[] args) {
 
+        //Laboratoare software
+        Litere genereaza = new Litere();
+
+        // afișăm alfabetul complet
+        System.out.println("Alfabet: " + genereaza.getAlfabet());
+
+        // creăm array-ul cu secțiuni între vocale
+        String[] secvente = genereaza.splitVocale();
+
+        // afișăm array-ul
+        for (int i = 0; i < secvente.length; i++) {
+            System.out.println("array[" + i + "] = " + secvente[i]);
+        }
+        System.out.println(" ");
+
         Student Radu = new Student(577, "Radu", "Dogaru", "ISM");
 
         System.out.println(Radu);
 
-
-
+        System.out.println(" ");
 
         List<Integer> x = new ArrayList();
         List<Integer> y = new ArrayList();
@@ -34,6 +49,7 @@ public class Main{
         Sort(y);//da
         System.out.println(x);
         System.out.println(y);
+        System.out.println(" ");
 
         //Ex 2.5.1
         //a
@@ -41,11 +57,13 @@ public class Main{
         xPlusY.addAll(y);
         Sort(xPlusY);
         System.out.println("xPlusY="+ xPlusY);
+        System.out.println(" ");
 
         //b
         zSet.addAll(x);
         zSet.addAll(y);
         System.out.println("zSet= "+ zSet);
+        System.out.println(" ");
 
         //c
         for (Integer numar : x) {
@@ -55,6 +73,7 @@ public class Main{
         }
 
         System.out.println("xMinusY= " + xMinusY);
+        System.out.println(" ");
 
         //d
         for (Integer numar : x) {
@@ -69,6 +88,7 @@ public class Main{
             }
         }
         System.out.println("xPlusYLimitedByP " + xPlusYLimitedByP);
+        System.out.println(" ");
 
         //Ex 2.5.2
         //a
@@ -80,18 +100,21 @@ public class Main{
         lista.add(new Student(115,"Anca","Dcacov","ISM21/1"));
 
         System.out.println("Studenti:");
+        System.out.println(" ");
 
         for(Student s : lista){
             System.out.println(s);
         }
+
         //b
         boolean student1 = ExistaStud(lista,"Alis","Popa","TI21/2");
         System.out.println("Alis Popa exista: " + student1);
+        System.out.println(" ");
 
         //c
         boolean student2 = ExistaStud(lista,"Maria","Popa","TI21/1");
         System.out.println("Maria Popa exista: " + student2);
-
+        System.out.println(" ");
 
 
 
@@ -107,7 +130,9 @@ public class Main{
         Student s2 = new Student(112,"Maria","Popa","TI21/1");
 
         System.out.println("Student 1 exista: " + studenti.contains(s1));
+        System.out.println(" ");
         System.out.println("Student 2 exista: " + studenti.contains(s2));
+        System.out.println(" ");
     }
 
 

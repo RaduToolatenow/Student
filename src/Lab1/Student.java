@@ -24,6 +24,9 @@ public class Student {
     public String getFormatieDeStudiu() {
         return FormatieDeStudiu;
     }
+    public int getNumarMatricol() {
+        return NumarMatricol;
+    }
 
     @Override
     public boolean equals(Object o) {
