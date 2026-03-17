@@ -6,6 +6,8 @@ import java.util.*;
 import static Lab1.ExistaStudent.ExistaStud;
 import static Lab2.Ap1.generareNumere;
 import static Lab2.Ap1.Sort;
+
+
 public class Main{
     public static void main(String[] args) {
 
@@ -94,12 +96,13 @@ public class Main{
 
 
         //Tema casa
-        Set<Student> studenti = new HashSet<>();
+        Set <Student> studenti = new HashSet <> ();
 
         studenti.add(new Student(120,"Alis","Popa","TI21/2"));
         studenti.add(new Student(111,"Ion","Popescu","TI21/1"));
         studenti.add(new Student(115,"Ana","Ionescu","TI21/3"));
 
+        //b si c
         Student s1 = new Student(120,"Alis","Popa","TI21/2");
         Student s2 = new Student(112,"Maria","Popa","TI21/1");
 

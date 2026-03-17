@@ -5,12 +5,14 @@ public class Student {
     private String Prenume;
     private String Nume;
     private String FormatieDeStudiu;
+
     public Student(int numarMatricol, String prenume, String nume, String formatieDeStudiu) {
         this.NumarMatricol = numarMatricol;
         this.Prenume = prenume;
         this.Nume = nume;
         this.FormatieDeStudiu = formatieDeStudiu;
     }
+
     public String getPrenume() {
         return Prenume;
     }
@@ -32,9 +34,7 @@ public class Student {
 
         Student s = (Student) o;
 
-        return Prenume.equals(s.Prenume) &&
-                Nume.equals(s.Nume) &&
-                FormatieDeStudiu.equals(s.FormatieDeStudiu);
+        return Prenume.equals(s.Prenume) && Nume.equals(s.Nume) && FormatieDeStudiu.equals(s.FormatieDeStudiu);
     }
 
     @Override

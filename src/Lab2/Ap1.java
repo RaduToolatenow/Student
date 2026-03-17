@@ -22,7 +22,7 @@ public class Ap1 {
         return lista;
     }
 
-    public static void Sort(List<Integer> list) {
+    public static void Sort(List <Integer> list) {
         int n = list.size();
 
         for (int i = 0; i < n - 1; i++) {
