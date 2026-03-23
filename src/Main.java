@@ -1,13 +1,14 @@
 import Lab1.Litere;
 import Lab1.Student;
 import Lab2.Ap1;
+import Lab3.FInSiOut;
 
 import java.util.*;
 
 import static Lab1.ExistaStudent.ExistaStud;
 import static Lab2.Ap1.generareNumere;
 import static Lab2.Ap1.Sort;
-
+import static Lab3.FInSiOut.BagaInFisier;
 
 public class Main{
     public static void main(String[] args) {
@@ -118,7 +119,8 @@ public class Main{
 
 
 
-        //Tema casa
+        //Tema casa lab 2
+
         Set <Student> studenti = new HashSet <> ();
 
         studenti.add(new Student(120,"Alis","Popa","TI21/2"));
@@ -132,6 +134,110 @@ public class Main{
         System.out.println("Student 1 exista: " + studenti.contains(s1));
         System.out.println(" ");
         System.out.println("Student 2 exista: " + studenti.contains(s2));
+        System.out.println(" ");
+
+
+
+        //Lab3
+
+        //3.5.1
+        String inputFile = "src/Lab3/in.txt";
+        String outputFile = "src/Lab3/out.txt";
+
+        // Citeste cu clasa
+        List<String> lines = FInSiOut.readLines(inputFile);
+
+        //a
+        List<String> resA = new ArrayList<>();
+        for (String line : lines) {
+            resA.add(line + "\n");
+        }
+
+        //b
+        List<String> resB = new ArrayList<>();
+        for (String line : lines) {
+            resB.add(line.replace(".", ".\n"));
+        }
+
+        //c
+
+        // Combina sa salvezi
+        List<String> Final = new ArrayList<>();
+
+        Final.add("=== a) ===");
+        Final.addAll(resA);
+
+        Final.add("=== b) ===");
+        Final.addAll(resB);
+
+        //Scrie cu clasa
+        FInSiOut.BagaInFisier(outputFile, Final);
+
+        //Print sa vad ce da
+        Final.forEach(System.out::println);
+
+
+
+        System.out.println(" ");
+
+
+        //3.5.2
+
+        List<String> linieCuLinie = FInSiOut.readLines("src/Lab1/studenti_in.txt");
+
+        List<Student> studentiDinFisier = new ArrayList<>();
+
+        for (String line : linieCuLinie) {
+            String[] parts = line.split(",");
+
+            studentiDinFisier.add(new Student(
+                    Integer.parseInt(parts[0]),
+                    parts[1],
+                    parts[2],
+                    parts[3]
+            ));
+        }
+
+        // Afisare
+        System.out.println("Studenti: ");
+        studentiDinFisier.forEach(System.out::println);
+
+        // Sortare dupa nume
+        studentiDinFisier.sort(Comparator.comparing(Student::getNume));
+
+        // Scriere in fisier
+        List<String> output = new ArrayList<>();
+
+        for (Student s : studentiDinFisier) {
+            output.add(s.getNumarMatricol() + ", " + s.getPrenume() + ", " + s.getNume() + ", " + s.getFormatieDeStudiu());
+        }
+
+        FInSiOut.BagaInFisier("src/Lab1/studenti_out.txt", output);
+
+        System.out.println(" ");
+
+
+
+        //Tema de casa lab 3
+
+        // Sortare dupa: formatie, nume, prenume
+
+
+        studentiDinFisier.sort(Comparator.comparing(Student::getFormatieDeStudiu).thenComparing(Student::getNume).thenComparing(Student::getPrenume));
+
+        // Scriere fisier
+        List<String> outputSorted = new ArrayList<>();
+
+        for (Student s : studentiDinFisier) {
+            outputSorted.add(
+                    s.getNumarMatricol() + "," +
+                            s.getPrenume() + "," +
+                            s.getNume() + "," +
+                            s.getFormatieDeStudiu()
+            );
+        }
+
+        FInSiOut.BagaInFisier("src/Lab1/studenti_out_sorted.txt", outputSorted);
         System.out.println(" ");
     }
 
