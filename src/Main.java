@@ -239,8 +239,34 @@ public class Main{
 
         FInSiOut.BagaInFisier("src/Lab1/studenti_out_sorted.txt", outputSorted);
         System.out.println(" ");
+
+        //Lab4
+        //4.5.2
+        HashMap<Integer, Student> studentiMap = new HashMap<>();
+
+        for (Student s : studentiDinFisier) {
+            studentiMap.put(s.getNumarMatricol(), s);
+        }
+//se ia din fisier
+        List<String> noteLines = FInSiOut.readLines("src/Lab1/note_anon.txt");
+
+        for (String line : noteLines) {
+            String[] parts = line.split(",");
+
+            int nrMatricol = Integer.parseInt(parts[0]);
+            double nota = Double.parseDouble(parts[1]);
+
+            Student s = studentiMap.get(nrMatricol);
+
+            if (s != null) {
+                s.setNota(nota);
+            }
+        }
+//afisare
+        studentiMap.forEach((key, value) ->
+                System.out.println(key + " -> " + value)
+        );
+
+
     }
-
-//d
-
 }
