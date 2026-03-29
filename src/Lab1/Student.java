@@ -5,6 +5,7 @@ public class Student {
     private String Prenume;
     private String Nume;
     private String FormatieDeStudiu;
+    private double nota;
 
     public Student(int numarMatricol, String prenume, String nume, String formatieDeStudiu) {
         this.NumarMatricol = numarMatricol;
@@ -14,18 +15,31 @@ public class Student {
     }
 
     public String getPrenume() {
+
         return Prenume;
     }
 
     public String getNume() {
+
         return Nume;
     }
 
     public String getFormatieDeStudiu() {
+
         return FormatieDeStudiu;
     }
     public int getNumarMatricol() {
+
         return NumarMatricol;
+    }
+
+    //pentru nota
+    public void setNota(double nota) {
+        this.nota = nota;
+    }
+
+    public double getNota() {
+        return nota;
     }
 
     @Override
@@ -47,7 +61,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return  "Numar_Matricol:" + NumarMatricol + " prenume:" + Prenume + " nume:" + Nume +  " formatieDeStudiu:" + FormatieDeStudiu;
+        return  "Numar_Matricol:" + NumarMatricol + " prenume:" + Prenume + " nume:" + Nume +  " formatieDeStudiu:" + FormatieDeStudiu+ " nota:"+nota;
     }
 
 
