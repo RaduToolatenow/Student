@@ -2,13 +2,16 @@ import Lab1.Litere;
 import Lab1.Student;
 import Lab2.Ap1;
 import Lab3.FInSiOut;
+import Lab4.Tanar;
 
 import java.util.*;
 
 import static Lab1.ExistaStudent.ExistaStud;
+import static Lab1.ExistaStudent.gasesteNota;
 import static Lab2.Ap1.generareNumere;
 import static Lab2.Ap1.Sort;
 import static Lab3.FInSiOut.BagaInFisier;
+
 
 public class Main{
     public static void main(String[] args) {
@@ -267,6 +270,15 @@ public class Main{
                 System.out.println(key + " -> " + value)
         );
 
+
+
+        //Tema Lab 4
+
+        float notaM = gasesteNota("Bianca", "Popescu", studentiMap);
+        float notaN = gasesteNota("Ioan", "Popa", studentiMap);
+
+        System.out.println("Nota Bianca Popescu: " + notaM);
+        System.out.println("Nota Ioan Popa: " + notaN);
 
     }
 }
