@@ -250,7 +250,8 @@ public class Main{
         for (Student s : studentiDinFisier) {
             studentiMap.put(s.getNumarMatricol(), s);
         }
-//se ia din fisier
+
+        //se ia din fisier
         List<String> noteLines = FInSiOut.readLines("src/Lab1/note_anon.txt");
 
         for (String line : noteLines) {
@@ -265,7 +266,7 @@ public class Main{
                 s.setNota(nota);
             }
         }
-//afisare
+        //afisare
         studentiMap.forEach((key, value) ->
                 System.out.println(key + " -> " + value)
         );
