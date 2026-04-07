@@ -6,11 +6,12 @@ public class StudentBursier extends Student {
 
     private double cuantumBursa;
 
-    public StudentBursier(int numarMatricol, String prenume, String nume,
-                          String formatieDeStudiu, double nota, double cuantumBursa) {
+    public StudentBursier(int numarMatricol, String prenume, String nume, String formatieDeStudiu, double nota, double cuantumBursa) {
         super(numarMatricol, prenume, nume, formatieDeStudiu);
+       // super(numarMatricol);
         setNota(nota);
         this.cuantumBursa = cuantumBursa;
+
     }
 
     public double getCuantumBursa() {
@@ -20,7 +21,9 @@ public class StudentBursier extends Student {
     public void setCuantumBursa(double cuantumBursa) {
         this.cuantumBursa = cuantumBursa;
     }
-
+public void setNota(double nota){
+         super.setNota(11);
+}
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
