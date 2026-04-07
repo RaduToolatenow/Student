@@ -2,7 +2,7 @@ package Lab1;
 
 public class Student {
     private int numarMatricol;
-    private String Prenume;
+    private String Prenume= " ";
     private String Nume;
     private String FormatieDeStudiu;
     private double nota;
@@ -13,7 +13,12 @@ public class Student {
         this.Nume = nume;
         this.FormatieDeStudiu = formatieDeStudiu;
     }
-
+public Student(int numarMatricol){
+    this.numarMatricol = numarMatricol;
+}
+    public Student(){
+        this.numarMatricol = 0;
+    }
     public String getPrenume() {
 
         return Prenume;

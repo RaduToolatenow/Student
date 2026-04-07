@@ -8,13 +8,7 @@ import java.util.stream.Collectors;
 
 public class Lab5Bursier {
 
-    // Metoda statica de salvare, accepta orice lista de Student (sau subclase)
-    public static void salveazaInFisier(String numeFisier, List<? extends Student> colectie) {
-        List<String> linii = colectie.stream()
-                .map(Student::toString)
-                .collect(Collectors.toList());
-        FInSiOut.BagaInFisier(numeFisier, linii);
-    }
+
 
     public static void main(String[] args) {
 
@@ -28,9 +22,23 @@ public class Lab5Bursier {
         // Afisare in consola
         bursieri.forEach(System.out::println);
 
-        // Salvare in fisier
-        salveazaInFisier("bursieri_out.txt", bursieri);
+        /*for(StudentBursier i:bursieri){
+            System.out.println(i);
+        }
 
-        System.out.println("\nLista salvata in bursieri_out.txt");
+        for(int i=0;i<bursieri.size();i++){
+            System.out.println(bursieri.get(i));
+        }*/
+
+        // 🔹 Transformare obiecte -> String
+        List<String> linii = bursieri.stream()
+                .map(StudentBursier::toString)
+                .collect(Collectors.toList());
+
+        // 🔹 Scriere in fisier
+        FInSiOut.BagaInFisier("src/Lab1/bursieri.txt", linii);
+
+        System.out.println("Datele au fost salvate in fisier!");
+
     }
 }
