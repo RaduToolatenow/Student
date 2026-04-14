@@ -8,21 +8,24 @@ public class StudentBursier extends Student {
 
     public StudentBursier(int numarMatricol, String prenume, String nume, String formatieDeStudiu, double nota, double cuantumBursa) {
         super(numarMatricol, prenume, nume, formatieDeStudiu);
-       // super(numarMatricol);
+
         setNota(nota);
         this.cuantumBursa = cuantumBursa;
 
     }
 
     public double getCuantumBursa() {
+
         return cuantumBursa;
     }
 
     public void setCuantumBursa(double cuantumBursa) {
+
         this.cuantumBursa = cuantumBursa;
     }
 public void setNota(double nota){
-         super.setNota(11);
+
+        super.setNota(nota);
 }
     @Override
     public boolean equals(Object o) {
@@ -35,11 +38,13 @@ public void setNota(double nota){
 
     @Override
     public int hashCode() {
+
         return Objects.hash(super.hashCode(), cuantumBursa);
     }
 
     @Override
     public String toString() {
+
         return super.toString() + " cuantumBursa:" + cuantumBursa;
     }
 }

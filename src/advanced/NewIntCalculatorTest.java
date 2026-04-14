@@ -7,81 +7,108 @@ class NewIntCalculatorTest {
 
     @Test
     void testInit() {
-        // Arrange
+
         NewIntCalculator calc = new NewIntCalculator();
 
-        // Act
         calc.init();
 
-        // Assert
         assertEquals(0, calc.state);
     }
 
     @Test
     void testAdd() {
-        // Arrange
+
         NewIntCalculator calc = new NewIntCalculator();
         calc.init();
 
-        // Act
+
         calc.add(5);
 
-        // Assert
+
         assertEquals(5, calc.state);
     }
 
     @Test
     void testAddNegative() {
-        // Arrange
+
         NewIntCalculator calc = new NewIntCalculator();
         calc.init();
 
-        // Act
+
         calc.add(-3);
 
-        // Assert
+
         assertEquals(-3, calc.state);
     }
 
     @Test
     void testSubtract() {
-        // Arrange
+
         NewIntCalculator calc = new NewIntCalculator();
         calc.init();
         calc.add(10);
 
-        // Act
         calc.subtract(4);
 
-        // Assert
         assertEquals(6, calc.state);
     }
 
     @Test
     void testMultiply() {
-        // Arrange
+
         NewIntCalculator calc = new NewIntCalculator();
         calc.init();
         calc.add(3);
 
-        // Act
         calc.multiply(4);
 
-        // Assert
         assertEquals(12, calc.state);
     }
 
     @Test
     void testMultiplyWithZero() {
-        // Arrange
+
         NewIntCalculator calc = new NewIntCalculator();
         calc.init();
         calc.add(10);
 
-        // Act
         calc.multiply(0);
 
-        // Assert
         assertEquals(0, calc.state);
+    }
+
+    @Test
+    void testOperationAfterClearPointerException() {
+
+        NewIntCalculator calc = new NewIntCalculator();
+        calc.init();
+        calc.clear();
+
+        //null Integer da NullPointerException
+        assertThrows(NullPointerException.class, () -> calc.add(5));
+    }
+
+    @Test
+    void testMultiplyOverflow() {
+
+        NewIntCalculator calc = new NewIntCalculator();
+        calc.init();
+        calc.add(Integer.MAX_VALUE);
+
+        calc.multiply(2);
+
+        assertEquals(Integer.MAX_VALUE * 2, calc.state); // -2 due to overflow
+    }
+
+    @Test
+    void testSubtractOverflow() {
+
+        NewIntCalculator calc = new NewIntCalculator();
+        calc.init();
+        calc.add(Integer.MIN_VALUE);
+
+        calc.subtract(1);
+
+        assertEquals(Integer.MAX_VALUE, calc.state);
     }
 }

@@ -14,9 +14,11 @@ public class Student {
         this.FormatieDeStudiu = formatieDeStudiu;
     }
 public Student(int numarMatricol){
-    this.numarMatricol = numarMatricol;
+
+        this.numarMatricol = numarMatricol;
 }
     public Student(){
+
         this.numarMatricol = 0;
     }
     public String getPrenume() {
@@ -40,10 +42,12 @@ public Student(int numarMatricol){
 
     //pentru nota
     public void setNota(double nota) {
+
         this.nota = nota;
     }
 
-    public double getNota() {
+    public  double getNota() {
+
         return nota;
     }
 
@@ -61,6 +65,7 @@ public Student(int numarMatricol){
 
     @Override
     public int hashCode() {
+
         return Prenume.hashCode() + Nume.hashCode() + FormatieDeStudiu.hashCode();
     }
 
