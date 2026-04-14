@@ -16,7 +16,7 @@ public class AplicatieCuBursa {
         }
 
         System.out.println("--------------------------------------------------");
-
+//
         List<StudentBursier> sortata = instanta.sorteaza(lista);
         for (StudentBursier student : sortata) {
             System.out.println(student);
