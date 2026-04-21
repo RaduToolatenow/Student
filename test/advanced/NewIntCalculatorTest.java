@@ -111,4 +111,15 @@ class NewIntCalculatorTest {
 
         assertEquals(Integer.MAX_VALUE, calc.state);
     }
+
+    @Test
+    void testClear() {
+        NewIntCalculator calc = new NewIntCalculator();
+        calc.init();
+        calc.add(5);
+
+        calc.clear();
+
+        assertNull(calc.state);
+    }
 }
