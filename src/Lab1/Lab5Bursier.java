@@ -5,7 +5,7 @@ import Lab3.FInSiOut;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
+/*
 public class Lab5Bursier {
 
 
@@ -28,7 +28,7 @@ public class Lab5Bursier {
 
         for(int i=0;i<bursieri.size();i++){
             System.out.println(bursieri.get(i));
-        }*/
+        }
 
         // 🔹 Transformare obiecte -> String
         List<String> linii = bursieri.stream()
@@ -41,4 +41,4 @@ public class Lab5Bursier {
         System.out.println("Datele au fost salvate in fisier!");
 
     }
-}
+}*/

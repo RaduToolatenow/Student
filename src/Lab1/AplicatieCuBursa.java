@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 
 
-
+/*
 public class AplicatieCuBursa {
    public static void main(String[] args) {
         AplicatieCuBursa instanta = new AplicatieCuBursa();
@@ -46,4 +46,4 @@ public class AplicatieCuBursa {
         sortata.sort(comparator);
         return sortata;
     }
-}
+}*/
