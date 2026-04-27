@@ -12,7 +12,7 @@ import static Lab2.Ap1.generareNumere;
 import static Lab2.Ap1.Sort;
 import static Lab3.FInSiOut.BagaInFisier;
 
-
+/*
 public class Main{
     public static void main(String[] args) {
 
@@ -281,5 +281,48 @@ public class Main{
         System.out.println("Nota Bianca Popescu: " + notaM);
         System.out.println("Nota Ioan Popa: " + notaN);
 
+    }
+}*/
+
+//Lab 7.3
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Student> studenti = new ArrayList<>();
+
+        studenti.add(new Student(1, "Ana", "Pop", "A", 9));
+        studenti.add(new Student(2, "Ion", "Iancu", "A", 8));
+        studenti.add(new Student(3, "Maria", "Moga", "A", 10));
+        studenti.add(new Student(4, "Dan", "Popa", "A", 7));
+        studenti.add(new Student(5, "Elena", "Magdalena", "A", 9));
+
+        List<Student> grupa1 = new ArrayList<>();
+        List<Student> grupa2 = new ArrayList<>();
+
+        int mijloc = (studenti.size() + 1) / 2;
+
+        for (int i = 0; i < studenti.size(); i++) {
+            if (i < mijloc) {
+                grupa1.add(studenti.get(i));
+            } else {
+                grupa2.add(studenti.get(i));
+            }
+        }
+
+        // muta student din grupa1 în grupa2
+        Student s = grupa1.get(0);
+        Student mutat = s.mutaLaAltaFormatie("B");
+
+        grupa1.remove(0);
+        grupa2.add(mutat);
+
+        // afișare
+        System.out.println("Grupa 1:");
+        grupa1.forEach(System.out::println);
+
+        System.out.println("\nGrupa 2:");
+        grupa2.forEach(System.out::println);
     }
 }

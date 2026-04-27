@@ -1,7 +1,7 @@
 package Lab1;
 
 import java.util.Objects;
-
+/*
 public class StudentBursier extends Student {
 
     private double cuantumBursa;
@@ -47,4 +47,4 @@ public void setNota(double nota){
 
         return super.toString() + " cuantumBursa:" + cuantumBursa;
     }
-}
+}*/
