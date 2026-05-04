@@ -333,7 +333,7 @@ public class Main {
                 "src/Lab8/laborator8_students.xlsx"
         );
 
-// b) citire
+        // b) citire
         List<Student> cititi = CitireScriereStudent.readStudent(
                 "src/Lab8/laborator8_students.xlsx"
         );
