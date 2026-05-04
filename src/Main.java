@@ -1,3 +1,4 @@
+import Lab1.CitireScriereStudent;
 import Lab1.Litere;
 import Lab1.Student;
 import Lab2.Ap1;
@@ -324,5 +325,21 @@ public class Main {
 
         System.out.println("\nGrupa 2:");
         grupa2.forEach(System.out::println);
+
+
+        // a) export
+        CitireScriereStudent.exportStudent(
+                studenti,
+                "src/Lab8/laborator8_students.xlsx"
+        );
+
+// b) citire
+        List<Student> cititi = CitireScriereStudent.readStudent(
+                "src/Lab8/laborator8_students.xlsx"
+        );
+
+        System.out.println("\nExcel:");
+        cititi.forEach(System.out::println);
+
     }
 }
