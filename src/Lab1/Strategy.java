@@ -216,7 +216,44 @@ public class Strategy {
     }
 
 
+    // Decorator abstract
+    public static abstract class ExportDecorator implements IStudentiExport {
 
+        protected IStudentiExport exporter;
+
+        public ExportDecorator(IStudentiExport exporter) {
+            this.exporter = exporter;
+        }
+
+        @Override
+        public void doExport(List<Student> studenti) {
+            exporter.doExport(studenti);
+        }
+    }
+
+
+
+
+    // Decorator masurare timp
+    public static class ExportTimeDecorator extends ExportDecorator {
+
+        public ExportTimeDecorator(IStudentiExport exporter) {
+            super(exporter);
+        }
+
+        @Override
+        public void doExport(List<Student> studenti) {
+
+            long start = System.currentTimeMillis();
+
+            exporter.doExport(studenti);
+
+            long finish = System.currentTimeMillis();
+
+            System.out.println("Timp executie: "
+                    + (finish - start) + " ms");
+        }
+    }
 
 
 
